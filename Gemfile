@@ -13,6 +13,8 @@ gem "interactor-rails"
 gem "oj", "~> 3"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
+gem "turbolinks"
+gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "pry"
