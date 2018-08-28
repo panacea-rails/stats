@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   scope module: :api, constraints: ApiConstraints do
     resources :statistics, only: :create
   end
+
+  root to: "dashboard#index"
 end
