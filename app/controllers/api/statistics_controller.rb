@@ -3,7 +3,12 @@
 module API
   class StatisticsController < APIController
     def create
-      result = API::CreateStatistic.call(params: statistic_params)
+      result = API::CreateStatistic.call(
+        params: statistic_params.merge(
+          ip_address: request.remote_ip,
+          country: request.location.country
+        )
+      )
 
       head result.status
     end
