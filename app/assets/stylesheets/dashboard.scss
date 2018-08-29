@@ -3,7 +3,11 @@
   @extend .p-5;
 
   .chart-container {
-    @extend .col-3;
+    @extend .col-lg-3;
+    @extend .col-xl-3;
+    @extend .col-md-6;
+    @extend .col-12;
+
     @extend .mb-5;
 
     h3 {
