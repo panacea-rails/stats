@@ -10,8 +10,8 @@ class StatisticsInformation
     ]
 
     @open_answer_charts = %i[
-      ruby_version expected_coverage test_suite country timezone locale
-      githook_type webpack_type devise_model_name background_job
+      ruby_version arguments expected_coverage test_suite country timezone
+      locale githook_type webpack_type devise_model_name background_job
     ]
   end
 
@@ -99,6 +99,9 @@ class StatisticsInformation
     @country_chart_info ||= Statistic.group(:country).count
   end
 
+  def arguments_chart_info
+    @arguments_chart_info ||= Statistic.group(:arguments).count
+  end
 
   def background_job_chart_info
     @background_job_chart_info ||= Statistic.group(:background_job).count

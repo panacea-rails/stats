@@ -24,7 +24,9 @@ class API::StatisticsControllerTest < ActionDispatch::IntegrationTest
       autocommit: true,
       commit_msg: "Initialize Rails App powered with Panacea",
       githook: true,
-      githook_type: "pre-push"
+      githook_type: "pre-push",
+      background_job: "sidekiq",
+      arguments: "--database=postgresql"
     }
 
     @headers = {
