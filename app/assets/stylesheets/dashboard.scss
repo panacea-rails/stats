@@ -1,0 +1,40 @@
+.charts-container {
+  @extend .container-fluid;
+  @extend .p-5;
+
+  .chart-container {
+    @extend .col-3;
+    @extend .mb-5;
+
+    h3 {
+      @extend .text-center;
+    }
+  }
+}
+
+.usage-total {
+  @extend .my-3;
+
+  h1, h2 {
+    @extend .text-success;
+    @extend .text-center;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+}
+
+.last-run {
+  @extend .my-2;
+  @extend .mr-2;
+
+  p {
+    @extend .text-right;
+    @extend .text-black-50;
+  }
+}

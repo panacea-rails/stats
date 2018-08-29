@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_211905) do
+ActiveRecord::Schema.define(version: 2018_08_29_185135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,27 +19,28 @@ ActiveRecord::Schema.define(version: 2018_08_28_211905) do
     t.string "ruby_version"
     t.string "test_suite"
     t.integer "expected_coverage"
-    t.boolean "headless_chrome"
-    t.boolean "dotenv"
-    t.boolean "webpack"
+    t.boolean "headless_chrome", default: false
+    t.boolean "dotenv", default: false
+    t.boolean "webpack", default: false
     t.string "webpack_type"
-    t.boolean "devise"
+    t.boolean "devise", default: false
     t.string "devise_model_name"
-    t.boolean "devise_override_views"
-    t.boolean "kaminari"
-    t.boolean "oj"
-    t.boolean "money_rails"
-    t.boolean "markdown"
+    t.boolean "devise_override_views", default: false
+    t.boolean "kaminari", default: false
+    t.boolean "oj", default: false
+    t.boolean "money_rails", default: false
+    t.boolean "markdown", default: false
     t.string "timezone"
     t.string "locale"
-    t.boolean "autocommit"
+    t.boolean "autocommit", default: false
     t.string "commit_msg"
-    t.boolean "githook"
+    t.boolean "githook", default: false
     t.string "githook_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.inet "ip_address"
     t.string "country"
+    t.string "background_job"
   end
 
 end
