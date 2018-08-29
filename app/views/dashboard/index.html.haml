@@ -1,3 +1,8 @@
+.last-run
+  %p
+    = t(".last_update")
+    = time_tag(Time.zone.now)
+
 .usage-total
   %h1= number_with_delimiter @stats_info.usage_total
   %h2= t(".usage_total")

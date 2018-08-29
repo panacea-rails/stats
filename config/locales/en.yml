@@ -3,6 +3,7 @@ en:
 
   dashboard:
     index:
+      last_update: "Last Update:"
       usage_total: Total Runs
       ruby_version_title: Installed Ruby Versions
       expected_coverage_title: Entered Minimum Coverage

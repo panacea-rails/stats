@@ -28,3 +28,13 @@
     font-size: 1.2em;
   }
 }
+
+.last-run {
+  @extend .my-2;
+  @extend .mr-2;
+
+  p {
+    @extend .text-right;
+    @extend .text-black-50;
+  }
+}
