@@ -1,3 +1,7 @@
+.usage-total
+  %h1= number_with_delimiter @stats_info.usage_total
+  %h2= t(".usage_total")
+
 .charts-container
   .row
     - @stats_info.open_answer_charts.each do |chart_name|
@@ -19,6 +23,11 @@
           ['No', #{@stats_info.send("#{chart_name}_chart_info").last}],
         ],
         type : 'pie'
+      },
+      tooltip: {
+        format: {
+          value: function (value, ratio, id, index) { return value; }
+        }
       }
     });
 
@@ -36,5 +45,10 @@
           #{columns.html_safe}
         ],
         type : 'pie'
+      },
+      tooltip: {
+        format: {
+          value: function (value, ratio, id, index) { return value; }
+        }
       }
     });

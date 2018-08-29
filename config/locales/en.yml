@@ -1,33 +1,26 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  panacea_stats: Panacea Usage Stats
+
+  dashboard:
+    index:
+      usage_total: Total Runs
+      ruby_version_title: Installed Ruby Versions
+      expected_coverage_title: Entered Minimum Coverage
+      test_suite_title: Selected Testing Framework
+      timezone_title: Selected Time Zone
+      locale_title: Selected Language
+      githook_type_title: Selected Git hook
+      webpack_type_title: Selected Webpack Framework
+      devise_model_name_title: Entered Devise Model Name
+      country_title: Usage by Countries
+      devise_title: Devise was installed?
+      devise_override_views_title: Devise views were overriden?
+      dotenv_title: Dotenv was installed?
+      headless_chrome_title: Headless Chrome was installed?
+      webpack_title: Webpack was installed?
+      kaminari_title: Kaminari was installed?
+      money_rails_title: Money-Rails was installed?
+      oj_title: OJ was installed?
+      markdown_title: Redcarpet was installed?
+      autocommit_title: The commit was made?
+      githook_title: A Git hook was installed?

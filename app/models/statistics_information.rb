@@ -20,80 +20,47 @@ class StatisticsInformation
   end
 
   def headless_chrome_chart_info
-    @headless_chrome_chart_info ||= [
-      Statistic.where(headless_chrome: true).count,
-      Statistic.where(headless_chrome: false).count
-    ]
+    @headless_chrome_chart_info ||= boolean_results_for(:headless_chrome)
   end
 
   def dotenv_chart_info
-    @dotenv_chart_info ||= [
-      Statistic.where(dotenv: true).count,
-      Statistic.where(dotenv: false).count
-    ]
+    @dotenv_chart_info ||= boolean_results_for(:dotenv)
   end
 
   def webpack_chart_info
-    @webpack_chart_info ||= [
-      Statistic.where(webpack: true).count,
-      Statistic.where(webpack: false).count
-    ]
+    @webpack_chart_info ||= boolean_results_for(:webpack)
   end
 
   def devise_chart_info
-    @devise_chart_info ||= [
-      Statistic.where(devise: true).count,
-      Statistic.where(devise: false).count
-    ]
+    @devise_chart_info ||= boolean_results_for(:devise)
   end
 
   def devise_override_views_chart_info
-    @devise_override_views_chart_info ||= [
-      Statistic.where(devise_override_views: true).count,
-      Statistic.where(devise_override_views: false).count
-    ]
+    @devise_override_views_chart_info ||= boolean_results_for(:devise_override_views)
   end
 
   def kaminari_chart_info
-    @kaminari_chart_info ||= [
-      Statistic.where(kaminari: true).count,
-      Statistic.where(kaminari: false).count
-    ]
+    @kaminari_chart_info ||= boolean_results_for(:kaminari)
   end
 
   def oj_chart_info
-    @oj_chart_info ||= [
-      Statistic.where(oj: true).count,
-      Statistic.where(oj: false).count
-    ]
+    @oj_chart_info ||= boolean_results_for(:oj)
   end
 
   def money_rails_chart_info
-    @money_rails_chart_info ||= [
-      Statistic.where(money_rails: true).count,
-      Statistic.where(money_rails: false).count
-    ]
+    @money_rails_chart_info ||= boolean_results_for(:money_rails)
   end
 
   def markdown_chart_info
-    @markdown_chart_info ||= [
-      Statistic.where(markdown: true).count,
-      Statistic.where(markdown: false).count
-    ]
+    @markdown_chart_info ||= boolean_results_for(:markdown)
   end
 
   def autocommit_chart_info
-    @autocommit_chart_info ||= [
-      Statistic.where(autocommit: true).count,
-      Statistic.where(autocommit: false).count
-    ]
+    @autocommit_chart_info ||= boolean_results_for(:autocommit)
   end
 
   def githook_chart_info
-    @githook_chart_info ||= [
-      Statistic.where(githook: true).count,
-      Statistic.where(githook: false).count
-    ]
+    @githook_chart_info ||= boolean_results_for(:githook)
   end
 
   def expected_coverage_chart_info
@@ -131,4 +98,13 @@ class StatisticsInformation
   def country_chart_info
     @country ||= Statistic.group(:country).count
   end
+
+  private
+
+    def boolean_results_for(field)
+      true_count = Statistic.where(field => true).count
+      false_count = usage_total - true_count
+
+      [true_count, false_count]
+    end
 end
