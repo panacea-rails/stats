@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
 class StatisticsInformation
-  attr_reader :stats, :boolean_charts
+  attr_reader :stats, :boolean_charts, :open_answer_charts
 
   def initialize
     @boolean_charts = %i[
       devise devise_override_views dotenv headless_chrome webpack
       kaminari money_rails oj markdown autocommit githook
     ]
-    @stats = Statistic.all
+
+    @open_answer_charts = %i[
+      ruby_version expected_coverage test_suite timezone locale
+      githook_type webpack_type devise_model_name country
+    ]
   end
 
   def usage_total
@@ -17,78 +21,114 @@ class StatisticsInformation
 
   def headless_chrome_chart_info
     @headless_chrome_chart_info ||= [
-      @stats.where(headless_chrome: true).count,
-      @stats.where(headless_chrome: false).count
+      Statistic.where(headless_chrome: true).count,
+      Statistic.where(headless_chrome: false).count
     ]
   end
 
   def dotenv_chart_info
     @dotenv_chart_info ||= [
-      @stats.where(dotenv: true).count,
-      @stats.where(dotenv: false).count
+      Statistic.where(dotenv: true).count,
+      Statistic.where(dotenv: false).count
     ]
   end
 
   def webpack_chart_info
     @webpack_chart_info ||= [
-      @stats.where(webpack: true).count,
-      @stats.where(webpack: false).count
+      Statistic.where(webpack: true).count,
+      Statistic.where(webpack: false).count
     ]
   end
 
   def devise_chart_info
     @devise_chart_info ||= [
-      @stats.where(devise: true).count,
-      @stats.where(devise: false).count
+      Statistic.where(devise: true).count,
+      Statistic.where(devise: false).count
     ]
   end
 
   def devise_override_views_chart_info
     @devise_override_views_chart_info ||= [
-      @stats.where(devise_override_views: true).count,
-      @stats.where(devise_override_views: false).count
+      Statistic.where(devise_override_views: true).count,
+      Statistic.where(devise_override_views: false).count
     ]
   end
 
   def kaminari_chart_info
     @kaminari_chart_info ||= [
-      @stats.where(kaminari: true).count,
-      @stats.where(kaminari: false).count
+      Statistic.where(kaminari: true).count,
+      Statistic.where(kaminari: false).count
     ]
   end
 
   def oj_chart_info
     @oj_chart_info ||= [
-      @stats.where(oj: true).count,
-      @stats.where(oj: false).count
+      Statistic.where(oj: true).count,
+      Statistic.where(oj: false).count
     ]
   end
 
   def money_rails_chart_info
     @money_rails_chart_info ||= [
-      @stats.where(money_rails: true).count,
-      @stats.where(money_rails: false).count
+      Statistic.where(money_rails: true).count,
+      Statistic.where(money_rails: false).count
     ]
   end
 
   def markdown_chart_info
     @markdown_chart_info ||= [
-      @stats.where(markdown: true).count,
-      @stats.where(markdown: false).count
+      Statistic.where(markdown: true).count,
+      Statistic.where(markdown: false).count
     ]
   end
 
   def autocommit_chart_info
     @autocommit_chart_info ||= [
-      @stats.where(autocommit: true).count,
-      @stats.where(autocommit: false).count
+      Statistic.where(autocommit: true).count,
+      Statistic.where(autocommit: false).count
     ]
   end
 
   def githook_chart_info
     @githook_chart_info ||= [
-      @stats.where(githook: true).count,
-      @stats.where(githook: false).count
+      Statistic.where(githook: true).count,
+      Statistic.where(githook: false).count
     ]
+  end
+
+  def expected_coverage_chart_info
+    @expected_coverage_chart_info ||= Statistic.group(:expected_coverage).count
+  end
+
+  def test_suite_chart_info
+    @test_suite_chart_info ||= Statistic.group(:test_suite).count
+  end
+
+  def ruby_version_chart_info
+    @ruby_version_chart_info ||= Statistic.group(:ruby_version).count
+  end
+
+  def timezone_chart_info
+    @timezone_chart_info ||= Statistic.group(:timezone).count
+  end
+
+  def locale_chart_info
+    @locale_chart_info ||= Statistic.group(:locale).count
+  end
+
+  def githook_type_chart_info
+    @githook_type_chart_info ||= Statistic.group(:githook_type).count
+  end
+
+  def webpack_type_chart_info
+    @webpack_type_chart_info ||= Statistic.group(:webpack_type).count
+  end
+
+  def devise_model_name_chart_info
+    @devise_model_name_chart_info ||= Statistic.group(:devise_model_name).count
+  end
+
+  def country_chart_info
+    @country ||= Statistic.group(:country).count
   end
 end
