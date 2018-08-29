@@ -37,7 +37,8 @@ module API
           :commit_msg,
           :githook,
           :githook_type,
-          :background_job
+          :background_job,
+          :arguments
         )
       end
   end

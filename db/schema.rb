@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_185135) do
+ActiveRecord::Schema.define(version: 2018_08_29_224424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_185135) do
     t.inet "ip_address"
     t.string "country"
     t.string "background_job"
+    t.string "arguments"
   end
 
 end
