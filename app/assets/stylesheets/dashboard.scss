@@ -1,0 +1,7 @@
+.charts-container {
+  @extend .container-fluid;
+
+  .chart-container {
+    @extend .col-3;
+  }
+}

@@ -1,0 +1,19 @@
+.charts-container
+  .row
+    - @stats_info.boolean_charts.each do |chart_name|
+      .chart-container
+        %h3= t(".#{chart_name}_title")
+        %div{ id: "#{chart_name.to_s.dasherize}-chart" }
+
+- @stats_info.boolean_charts.each do |chart_name|
+  :javascript
+    c3.generate({
+      bindto: "##{chart_name.to_s.dasherize}-chart",
+      data: {
+        columns: [
+          ['Yes', #{@stats_info.send("#{chart_name}_chart_info").first}],
+          ['No', #{@stats_info.send("#{chart_name}_chart_info").last}],
+        ],
+        type : 'pie'
+      }
+    });
