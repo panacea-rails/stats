@@ -36,7 +36,8 @@ module API
           :autocommit,
           :commit_msg,
           :githook,
-          :githook_type
+          :githook_type,
+          :background_job
         )
       end
   end
