@@ -38,6 +38,7 @@ module API
           :githook,
           :githook_type,
           :background_job,
+          :foreman,
           :arguments
         )
       end

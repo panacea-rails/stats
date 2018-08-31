@@ -26,6 +26,7 @@ class API::StatisticsControllerTest < ActionDispatch::IntegrationTest
       githook: true,
       githook_type: "pre-push",
       background_job: "sidekiq",
+      foreman: true,
       arguments: "--database=postgresql"
     }
 

@@ -26,4 +26,5 @@ en:
       autocommit_title: The commit was made?
       githook_title: A Git hook was installed?
       background_job_title: Selected Background Job Adapter
+      foreman_title: Foreman was installed?
       arguments_title: Passed Args

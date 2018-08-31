@@ -6,7 +6,7 @@ class StatisticsInformation
   def initialize
     @boolean_charts = %i[
       devise devise_override_views dotenv headless_chrome webpack
-      kaminari money_rails oj markdown autocommit githook
+      kaminari money_rails oj markdown autocommit githook foreman
     ]
 
     @open_answer_charts = %i[
@@ -105,6 +105,10 @@ class StatisticsInformation
 
   def background_job_chart_info
     @background_job_chart_info ||= Statistic.group(:background_job).count
+  end
+
+  def foreman_chart_info
+    @foreman_job_chart_info ||= boolean_results_for(:foreman)
   end
 
   private
