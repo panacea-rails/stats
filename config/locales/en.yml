@@ -28,3 +28,9 @@ en:
       background_job_title: Selected Background Job Adapter
       foreman_title: Foreman was installed?
       arguments_title: Passed Args
+      awesome_print_title: Awesome print was installed?
+      factory_bot_title: Factory bot was installed?
+      faker_title: Faker was installed?
+      http_stubs_title: Selected stub out HTTP requests
+      pg_search_title: Pg search was installed?
+      pundit_title: Pundit was installed?

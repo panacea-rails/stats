@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_231619) do
+ActiveRecord::Schema.define(version: 2018_09_03_222533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 2018_08_30_231619) do
     t.string "background_job"
     t.string "arguments"
     t.boolean "foreman", default: false
+    t.boolean "awesome_print", default: false
+    t.boolean "factory_bot", default: false
+    t.boolean "faker", default: false
+    t.string "http_stubs"
+    t.boolean "pg_search", default: false
+    t.boolean "pundit", default: false
   end
 
 end

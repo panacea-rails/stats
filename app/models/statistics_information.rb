@@ -7,11 +7,12 @@ class StatisticsInformation
     @boolean_charts = %i[
       devise devise_override_views dotenv headless_chrome webpack
       kaminari money_rails oj markdown autocommit githook foreman
+      awesome_print factory_bot faker pg_search pundit
     ]
 
     @open_answer_charts = %i[
       ruby_version arguments expected_coverage test_suite country timezone
-      locale githook_type webpack_type devise_model_name background_job
+      locale githook_type webpack_type devise_model_name background_job http_stubs
     ]
   end
 
@@ -109,6 +110,30 @@ class StatisticsInformation
 
   def foreman_chart_info
     @foreman_job_chart_info ||= boolean_results_for(:foreman)
+  end
+
+  def awesome_print_chart_info
+    @awesome_print_info ||= boolean_results_for(:awesome_print)
+  end
+
+  def factory_bot_chart_info
+    @factory_bot_info ||= boolean_results_for(:factory_bot)
+  end
+
+  def faker_chart_info
+    @faker_info ||= boolean_results_for(:faker)
+  end
+
+  def http_stubs_chart_info
+    @http_stubs_info ||= Statistic.group(:http_stubs).count
+  end
+
+  def pg_search_chart_info
+    @pg_search_info ||= boolean_results_for(:pg_search)
+  end
+
+  def pundit_chart_info
+    @pundit_info ||= boolean_results_for(:pundit)
   end
 
   private
