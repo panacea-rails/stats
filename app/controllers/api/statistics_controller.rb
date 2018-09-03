@@ -39,6 +39,12 @@ module API
           :githook_type,
           :background_job,
           :foreman,
+          :awesome_print,
+          :factory_bot,
+          :faker,
+          :http_stubs,
+          :pg_search,
+          :pundit,
           :arguments
         )
       end
