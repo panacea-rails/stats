@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_222533) do
+ActiveRecord::Schema.define(version: 2018_09_07_202248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2018_09_03_222533) do
     t.string "githook_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.inet "ip_address"
     t.string "country"
     t.string "background_job"
     t.string "arguments"
