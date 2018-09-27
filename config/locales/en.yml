@@ -34,3 +34,5 @@ en:
       http_stubs_title: Selected stub out HTTP requests
       pg_search_title: Pg search was installed?
       pundit_title: Pundit was installed?
+      bootswatch_title: Bootswatch was installed?
+      bootswatch_template_name_title: Selected Bootswatch 3 Theme

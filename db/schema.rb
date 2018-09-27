@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_202248) do
+ActiveRecord::Schema.define(version: 2018_09_27_181429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2018_09_07_202248) do
     t.string "http_stubs"
     t.boolean "pg_search", default: false
     t.boolean "pundit", default: false
+    t.boolean "bootswatch", default: false
+    t.string "bootswatch_template_name"
   end
 
 end

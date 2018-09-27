@@ -33,6 +33,8 @@ class API::StatisticsControllerTest < ActionDispatch::IntegrationTest
       http_stubs: "vcr",
       pg_search: true,
       pundit: true,
+      bootswatch: true,
+      bootswatch_template_name: "cosmo",
       arguments: "--database=postgresql"
     }
 

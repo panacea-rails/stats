@@ -7,12 +7,13 @@ class StatisticsInformation
     @boolean_charts = %i[
       devise devise_override_views dotenv headless_chrome webpack
       kaminari money_rails oj markdown autocommit githook foreman
-      awesome_print factory_bot faker pg_search pundit
+      awesome_print factory_bot faker pg_search pundit bootswatch
     ]
 
     @open_answer_charts = %i[
       ruby_version arguments expected_coverage test_suite country timezone
       locale githook_type webpack_type devise_model_name background_job http_stubs
+      bootswatch_template_name
     ]
   end
 
@@ -134,6 +135,14 @@ class StatisticsInformation
 
   def pundit_chart_info
     @pundit_info ||= boolean_results_for(:pundit)
+  end
+
+  def bootswatch_chart_info
+    @bootswatch_info ||= boolean_results_for(:bootswatch)
+  end
+
+  def bootswatch_template_name_chart_info
+    @bootswatch_template_info ||= Statistic.group(:bootswatch_template_name).count
   end
 
   private

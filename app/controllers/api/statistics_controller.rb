@@ -44,6 +44,8 @@ module API
           :http_stubs,
           :pg_search,
           :pundit,
+          :bootswatch,
+          :bootswatch_template_name,
           :arguments
         )
       end
